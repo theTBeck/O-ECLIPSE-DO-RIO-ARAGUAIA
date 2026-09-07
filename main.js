@@ -128,14 +128,14 @@
   });
 })();
 
-/* Inicializador do Livro 3D Livre (Sem Card) no Hero */
+/* Inicializador do Livro 3D Livre (Sem Card - Escala Ampliada) no Hero */
 window.initHero3DBook = function() {
   const container = document.getElementById("hero-3d-book-container");
   if (!container || typeof THREE === "undefined") return;
 
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(36, container.clientWidth / container.clientHeight, 0.1, 1000);
-  camera.position.set(3.4, 1.4, 4.4);
+  const camera = new THREE.PerspectiveCamera(35, container.clientWidth / container.clientHeight, 0.1, 1000);
+  camera.position.set(3.1, 1.25, 4.0);
 
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -156,10 +156,10 @@ window.initHero3DBook = function() {
   controls.target.set(0, 0, 0);
 
   // Iluminação Soft Studio
-  const ambient = new THREE.AmbientLight(0xffffff, 0.8);
+  const ambient = new THREE.AmbientLight(0xffffff, 0.82);
   scene.add(ambient);
 
-  const keyLight = new THREE.DirectionalLight(0xfff5ea, 1.35);
+  const keyLight = new THREE.DirectionalLight(0xfff5ea, 1.4);
   keyLight.position.set(4.5, 6, 4);
   keyLight.castShadow = true;
   keyLight.shadow.mapSize.width = 2048;
@@ -170,16 +170,16 @@ window.initHero3DBook = function() {
   fillLight.position.set(-5, 3, -2);
   scene.add(fillLight);
 
-  const rimLight = new THREE.DirectionalLight(0xffffff, 0.65);
+  const rimLight = new THREE.DirectionalLight(0xffffff, 0.7);
   rimLight.position.set(0, 4, -5);
   scene.add(rimLight);
 
   // Sombra no chão (Suave/Sombra de contato)
-  const planeGeo = new THREE.PlaneGeometry(10, 10);
-  const planeMat = new THREE.ShadowMaterial({ opacity: 0.4 });
+  const planeGeo = new THREE.PlaneGeometry(12, 12);
+  const planeMat = new THREE.ShadowMaterial({ opacity: 0.42 });
   const shadowPlane = new THREE.Mesh(planeGeo, planeMat);
   shadowPlane.rotation.x = -Math.PI / 2;
-  shadowPlane.position.y = -1.35;
+  shadowPlane.position.y = -1.7;
   shadowPlane.receiveShadow = true;
   scene.add(shadowPlane);
 
@@ -226,7 +226,8 @@ window.initHero3DBook = function() {
     new THREE.MeshStandardMaterial({ map: backTex, roughness: 0.28, metalness: 0.05 })   // Verso (Contracapa C4)
   ];
 
-  const bookGeo = new THREE.BoxGeometry(1.6, 2.35, 0.3);
+  // Geometria Ampliada (2.1 x 3.1 x 0.4)
+  const bookGeo = new THREE.BoxGeometry(2.1, 3.1, 0.4);
   const bookMesh = new THREE.Mesh(bookGeo, materials);
   bookMesh.castShadow = true;
   bookMesh.receiveShadow = true;
@@ -238,7 +239,7 @@ window.initHero3DBook = function() {
   function animate() {
     requestAnimationFrame(animate);
     const elapsed = clock.getElapsedTime();
-    bookMesh.position.y = Math.sin(elapsed * 0.8) * 0.035;
+    bookMesh.position.y = Math.sin(elapsed * 0.8) * 0.04;
     controls.update();
     renderer.render(scene, camera);
   }
