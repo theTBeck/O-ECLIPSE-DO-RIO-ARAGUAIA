@@ -395,38 +395,31 @@ a {
   border-radius: 12px;
 }
 
-.hero__3d-wrapper {
+.hero__cover-wrapper {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 780px;
+  max-width: 600px;
   margin: 0 auto;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
 }
 
-.hero__3d-canvas {
+.hero__cover-img {
   width: 100%;
-  height: clamp(520px, 72vh, 750px);
-  position: relative;
-  cursor: grab;
-  background: transparent !important;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease;
+  margin-bottom: 1.2rem;
 }
 
-.hero__3d-canvas:active {
-  cursor: grabbing;
+.hero__cover-img:hover {
+  transform: translateY(-4px) scale(1.015);
 }
-
-.hero-3d-hint {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.75);
-  letter-spacing: 0.05em;
-  margin-top: 0.2rem;
   margin-bottom: 1.2rem;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
 }

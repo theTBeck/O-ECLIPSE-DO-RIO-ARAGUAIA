@@ -69,9 +69,14 @@
           </h1>
         </div>
 
-        <div class="hero__3d-wrapper reveal">
-          <div id="hero-3d-book-container" class="hero__3d-canvas"></div>
-          <p class="hero-3d-hint">🖱️ Arraste para girar em 360°</p>
+        <div class="hero__cover-wrapper reveal">
+          <img
+            src="assets/C1-capa-frontal.jpg"
+            alt="Capa Oficial O Eclipse do Rio Araguaia"
+            class="hero__cover-img"
+            width="580"
+            height="834"
+          />
           <div class="hero-3d-details">
             <p class="hero-3d-spec">Disponível em e-Book e LIVRO FÍSICO IMPRESSO COM CAPA COMUM.</p>
             <p class="hero-3d-lang">Idiomas: Português (Brasil) + Eng + Espanhol.</p>
@@ -479,17 +484,6 @@
     </nav>
   </footer>
 
-  <!-- Three.js & OrbitControls para o Livro 3D Livre no Hero -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-
   <script src="main.js" defer></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      if (typeof initHero3DBook === "function") {
-        initHero3DBook();
-      }
-    });
-  </script>
 </body>
 </html>
