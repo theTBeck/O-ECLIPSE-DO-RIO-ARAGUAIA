@@ -402,7 +402,7 @@ a {
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 900px;
+  max-width: 780px;
   margin: 0 auto;
   background: transparent !important;
   border: none !important;
@@ -412,7 +412,7 @@ a {
 
 .hero__3d-canvas {
   width: 100%;
-  height: clamp(620px, 85vh, 880px);
+  height: clamp(520px, 72vh, 750px);
   position: relative;
   cursor: grab;
   background: transparent !important;
