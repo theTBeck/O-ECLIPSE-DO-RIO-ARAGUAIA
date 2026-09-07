@@ -171,6 +171,42 @@ a {
   color: #fff;
 }
 
+/* Botão de retorno à Hero Page */
+.hero-return-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 22px;
+  color: #ffffff;
+  font-family: var(--font-ui, system-ui, sans-serif);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.hero-return-btn:hover {
+  background: rgba(212, 175, 55, 0.3);
+  border-color: #d4af37;
+  color: #d4af37;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.4);
+}
+
+@media (max-width: 640px) {
+  .hero-return-btn {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.7rem;
+  }
+}
+
 /* Mega Menu Trigger Button no Header */
 .header__actions {
   display: flex;
