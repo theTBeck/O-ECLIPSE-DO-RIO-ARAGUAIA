@@ -621,13 +621,30 @@ a {
 .block--paper {
   background: var(--paper);
 }
-.bridge .display-mid {
-  max-width: 22ch;
-  line-height: 1.08;
+#epilogo {
+  padding: clamp(4rem, 8vw, 6.5rem) 1.5rem;
 }
-.bridge .prose {
-  max-width: min(52ch, 100%);
-  margin-top: 1.5rem;
+
+.epilogo__container {
+  width: min(84rem, 94%);
+  margin: 0 auto;
+}
+
+#epilogo .epilogo__title {
+  max-width: 100% !important;
+  font-size: clamp(2.2rem, 5.2vw, 4.2rem);
+  line-height: 1.15;
+  margin-bottom: 2rem;
+  white-space: normal;
+}
+
+.epilogo__prose {
+  max-width: 100% !important;
+  width: 100%;
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  line-height: 1.75;
+  color: var(--lodo);
+  margin-top: 0;
 }
 
 /* Valores */
