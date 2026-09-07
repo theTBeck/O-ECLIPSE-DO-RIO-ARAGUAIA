@@ -279,10 +279,42 @@ a {
   line-height: 1;
   color: var(--lodo);
 }
-#obra .display-mid {
-  line-height: 1.06;
-  letter-spacing: -0.02em;
-  max-width: 11ch;
+#obra {
+  padding: clamp(4rem, 8vw, 6.5rem) 1.5rem;
+}
+
+.obra__container {
+  width: min(84rem, 94%);
+  margin: 0 auto;
+}
+
+#obra .obra__title {
+  max-width: 100% !important;
+  font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+  line-height: 1.15;
+  margin-bottom: 2rem;
+  white-space: normal;
+}
+
+.obra__prose {
+  max-width: 100% !important;
+  width: 100%;
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  line-height: 1.75;
+  color: var(--lodo);
+}
+
+.obra__prose p {
+  margin-bottom: 1.4rem;
+  max-width: 100%;
+}
+
+.obra__credit {
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  font-weight: 500;
+  margin-top: 2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(13, 15, 14, 0.15);
 }
 .display-mid em {
   font-style: italic;
