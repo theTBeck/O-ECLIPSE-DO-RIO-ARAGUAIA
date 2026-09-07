@@ -364,13 +364,122 @@ a {
 .hero__veil {
   display: none !important;
 }
+
+/* Grid do Hero — Livro 3D Livre (Sem Card) */
+.hero__content-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+  width: min(86rem, 94%);
+  margin: auto auto 2rem auto;
+  padding: 1.5rem 0;
+}
+
+@media (max-width: 992px) {
+  .hero__content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 5rem;
+  }
+}
+
 .hero__copy {
   position: relative;
   z-index: 1;
-  padding: 1.35rem clamp(1rem, 3.5vw, 1.5rem) 2.35rem;
-  width: min(52rem, 100%);
-  margin-top: auto;
+  padding: 1.35rem clamp(1rem, 2.5vw, 1.5rem) 2rem;
+  width: 100%;
   background: linear-gradient(to top, rgba(10, 12, 11, 0.92), transparent);
+  border-radius: 12px;
+}
+
+.hero__3d-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.hero__3d-canvas {
+  width: 100%;
+  height: clamp(420px, 58vh, 600px);
+  position: relative;
+  cursor: grab;
+  background: transparent !important;
+}
+
+.hero__3d-canvas:active {
+  cursor: grabbing;
+}
+
+.hero-3d-hint {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.05em;
+  margin-top: 0.2rem;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+.hero-3d-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-3d-spec {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.45;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+.hero-3d-lang {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #d4af37; /* Dourado */
+  line-height: 1.35;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+}
+
+.hero-3d-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.6rem;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(135deg, #d4af37 0%, #a37c1e 100%);
+  color: #0d0f0e;
+  font-weight: 700;
+  font-size: 0.98rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 0 18px rgba(212, 175, 55, 0.35);
+}
+
+.hero-3d-btn:hover {
+  background: linear-gradient(135deg, #e5c158 0%, #c49915 100%);
+  box-shadow: 0 6px 26px rgba(212, 175, 55, 0.55);
+  transform: translateY(-2px);
 }
 
 /* Páginas de personagem — full-bleed cover */
