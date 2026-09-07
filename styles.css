@@ -490,30 +490,38 @@ a {
   transform: translateY(-4px) scale(1.015);
 }
 
-/* Frase Efeito Nuvem sobre a cena de João na Janela */
+/* Frase Efeito Nuvem — lado esquerdo sobre a imagem de João na Janela */
 .hero__cloud-phrase {
-  margin-top: 2rem;
-  padding: 0.95rem 1.4rem;
-  background: rgba(10, 12, 11, 0.78);
-  border-left: 3.5px solid #e5c158;
-  border-radius: 0 10px 10px 0;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.85);
-  position: relative;
-  z-index: 5;
+  position: absolute;
+  top: 50%;
+  left: clamp(2rem, 5vw, 4rem);
+  transform: translateY(-50%);
+  z-index: 10;
+  max-width: 48ch;
 }
 
 .cloud-phrase__text {
   font-family: var(--font-display, serif);
-  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   font-style: italic;
-  font-weight: 400;
-  color: #f7d570;
-  letter-spacing: 0.04em;
-  line-height: 1.45;
+  font-weight: 300;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
   margin: 0;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95), 0 0 22px rgba(229, 193, 88, 0.35);
-  animation: cloudReveal 2.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 0, 0, 0.7);
+  animation: cloudReveal 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.cloud-phrase__sub {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.9), 0 0 28px rgba(0, 0, 0, 0.6);
+  animation: cloudReveal 3.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes cloudReveal {
@@ -531,7 +539,7 @@ a {
     opacity: 1;
     filter: blur(0);
     transform: scale(1) translateY(0);
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
   }
 }
 
