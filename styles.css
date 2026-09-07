@@ -157,8 +157,239 @@ a {
 }
 
 /* Header */
-.site-header {
+/* Mega Menu Overlay Glassmorphism */
+.mega-menu {
   position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.mega-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mega-menu__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 10, 9, 0.92);
+  backdrop-filter: blur(18px);
+}
+
+.mega-menu__container {
+  position: relative;
+  z-index: 2;
+  width: min(84rem, 94%);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2.5rem;
+  background: rgba(18, 22, 20, 0.94);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(212, 175, 55, 0.15);
+  color: #fff;
+  transform: translateY(15px);
+  transition: transform 0.35s ease;
+}
+
+.mega-menu.is-open .mega-menu__container {
+  transform: translateY(0);
+}
+
+.mega-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.mega-menu__brand h3 {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-display, serif);
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.mega-menu__close {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mega-menu__close:hover {
+  background: rgba(230, 50, 50, 0.8);
+  border-color: transparent;
+}
+
+.mega-menu__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .mega-menu__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mega-col--preview {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .mega-menu__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mega-title {
+  margin: 0 0 1.2rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d4af37;
+}
+
+.mega-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.mega-link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.mega-link:hover {
+  background: rgba(212, 175, 55, 0.12);
+  transform: translateX(4px);
+}
+
+.link-title {
+  font-family: var(--font-display, serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.mega-link:hover .link-title {
+  color: #d4af37;
+}
+
+.link-desc {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 0.15rem;
+}
+
+.mega-amazon-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.2rem;
+  border-radius: 12px;
+}
+
+.mega-amazon-text {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 1rem;
+}
+
+.mega-amazon-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.mega-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.mega-btn--primary {
+  background: #d4af37;
+  color: #0c0e0d;
+}
+
+.mega-btn--primary:hover {
+  background: #e5c158;
+}
+
+.mega-btn--secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.mega-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Preview Dinâmico */
+.mega-preview-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+}
+
+.mega-preview-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.mega-preview-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 0.8rem 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: #d4af37;
+  text-align: center;
+}
   top: 0;
   left: 0;
   right: 0;
@@ -169,6 +400,43 @@ a {
   padding: 1rem 1.25rem;
   mix-blend-mode: difference;
   color: #fff;
+}
+
+/* Mega Menu Trigger Button no Header */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mega-menu-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  background: rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  border-radius: 20px;
+  color: #fff;
+  font-family: var(--font-ui, system-ui, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.mega-menu-trigger:hover {
+  background: rgba(212, 175, 55, 0.4);
+  border-color: #d4af37;
+  transform: translateY(-1px);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+.trigger-icon {
+  color: #d4af37;
+  font-size: 0.9rem;
 }
 .brand {
   font-family: var(--font-ui);

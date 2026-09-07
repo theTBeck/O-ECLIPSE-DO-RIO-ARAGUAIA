@@ -126,4 +126,60 @@
       rail.scrollBy({ left: step(), behavior: reduce ? "auto" : "smooth" });
     });
   });
+
+  /* Mega Menu Interativo */
+  const megaMenu = document.getElementById("mega-menu");
+  const megaBtn = document.getElementById("mega-menu-btn");
+  const megaClose = document.getElementById("mega-menu-close");
+  const megaBackdrop = document.getElementById("mega-menu-backdrop");
+  const megaPreviewImg = document.getElementById("mega-preview-img");
+  const megaPreviewCaption = document.getElementById("mega-preview-caption");
+
+  const openMegaMenu = () => {
+    if (!megaMenu) return;
+    megaMenu.classList.add("is-open");
+    megaMenu.setAttribute("aria-hidden", "false");
+    megaBtn?.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeMegaMenu = () => {
+    if (!megaMenu) return;
+    megaMenu.classList.remove("is-open");
+    megaMenu.setAttribute("aria-hidden", "true");
+    megaBtn?.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  };
+
+  megaBtn?.addEventListener("click", openMegaMenu);
+  megaClose?.addEventListener("click", closeMegaMenu);
+  megaBackdrop?.addEventListener("click", closeMegaMenu);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && megaMenu?.classList.contains("is-open")) {
+      closeMegaMenu();
+    }
+  });
+
+  /* Hover Previews Dinâmicos no Mega Menu */
+  document.querySelectorAll(".mega-link").forEach((link) => {
+    link.addEventListener("mouseenter", () => {
+      const imgSrc = link.getAttribute("data-preview");
+      const captionText = link.getAttribute("data-caption");
+      if (imgSrc && megaPreviewImg) {
+        megaPreviewImg.style.opacity = "0.3";
+        setTimeout(() => {
+          megaPreviewImg.src = imgSrc;
+          megaPreviewImg.style.opacity = "1";
+        }, 100);
+      }
+      if (captionText && megaPreviewCaption) {
+        megaPreviewCaption.textContent = captionText;
+      }
+    });
+
+    link.addEventListener("click", () => {
+      closeMegaMenu();
+    });
+  });
 })();

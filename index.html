@@ -35,6 +35,14 @@
 
   <header class="site-header" id="site-header">
     <a class="brand" href="#topo">EDITORA.BECK</a>
+    
+    <div class="header__actions">
+      <button class="mega-menu-trigger" id="mega-menu-btn" type="button" aria-expanded="false" aria-controls="mega-menu" aria-label="Abrir Mega Menu Navegação">
+        <span class="trigger-icon">✦</span>
+        <span class="trigger-text">Navegação & Panteão</span>
+      </button>
+    </div>
+
     <button class="menu-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="site-nav" id="site-nav" aria-label="Principal">
       <a href="#joao">João</a>
@@ -46,6 +54,106 @@
       <a href="#final">Amazon</a>
     </nav>
   </header>
+
+  <!-- MEGA MENU INTERATIVO OVERLAY -->
+  <div class="mega-menu" id="mega-menu" aria-hidden="true">
+    <div class="mega-menu__backdrop" id="mega-menu-backdrop"></div>
+    <div class="mega-menu__container">
+      <div class="mega-menu__header">
+        <div class="mega-menu__brand">
+          <span class="eyebrow dark">EDITORA.BECK</span>
+          <h3>O Eclipse do Rio Araguaia</h3>
+        </div>
+        <button class="mega-menu__close" id="mega-menu-close" type="button" aria-label="Fechar Menu">✕ FECHAR</button>
+      </div>
+
+      <div class="mega-menu__grid">
+        <!-- Coluna 1: Os Viajantes -->
+        <div class="mega-col">
+          <h4 class="mega-title">✦ Os Viajantes</h4>
+          <ul class="mega-links">
+            <li>
+              <a href="#joao" class="mega-link" data-preview="assets/personagens/joao.png" data-caption="João · 15 anos · O Chamado do Pai do Mato">
+                <span class="link-title">João</span>
+                <span class="link-desc">15 anos · O chamado do Pai do Mato</span>
+              </a>
+            </li>
+            <li>
+              <a href="#eneas" class="mega-link" data-preview="assets/personagens/seu-eneas.png" data-caption="Seo Enéas · Guardião do Rio Araguaia">
+                <span class="link-title">Seo Enéas</span>
+                <span class="link-desc">Guardião do rio · A sabedoria de Monan</span>
+              </a>
+            </li>
+            <li>
+              <a href="#pai" class="mega-link" data-preview="assets/personagens/pai.png" data-caption="O Pai · Documentarista NatGeo de Brodowski">
+                <span class="link-title">O Pai</span>
+                <span class="link-desc">Documentarista · O olhar de Brodowski</span>
+              </a>
+            </li>
+            <li>
+              <a href="#helena" class="mega-link" data-preview="assets/personagens/helena.png" data-caption="Helena · 14 anos · Areia Cantadeira">
+                <span class="link-title">Helena</span>
+                <span class="link-desc">14 anos · Areia Cantadeira & Primeiro Amor</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Coluna 2: Mitologia & Panteão -->
+        <div class="mega-col">
+          <h4 class="mega-title">✦ Mitologia & Panteão</h4>
+          <ul class="mega-links">
+            <li>
+              <a href="#deuses-paraisos" class="mega-link" data-preview="assets/mitos/anhanga-cervo.png" data-caption="Deuses Paraísos · Anhangá, Iara & Curupira">
+                <span class="link-title">Deuses Paraísos</span>
+                <span class="link-desc">Anhangá, Iara, Curupira, Uni & Berahatxi</span>
+              </a>
+            </li>
+            <li>
+              <a href="#panteao" class="mega-link" data-preview="assets/mitos/monan.png" data-caption="Panteão dos Deuses · Monan, Tupã & Guaraci">
+                <span class="link-title">Panteão dos Deuses</span>
+                <span class="link-desc">Monan, Tupã, Guaraci, Jaci & Charía</span>
+              </a>
+            </li>
+            <li>
+              <a href="#obra" class="mega-link" data-preview="assets/C1-capa-frontal.jpg" data-caption="A Obra · O rio. O eclipse. O chamado.">
+                <span class="link-title">A Obra</span>
+                <span class="link-desc">O rio. O eclipse. O chamado.</span>
+              </a>
+            </li>
+            <li>
+              <a href="#epilogo" class="mega-link" data-preview="assets/cenas/joao-sp-janela-por-do-sol-v3.png" data-caption="Goiás Velho · O encerramento & Cora Coralina">
+                <span class="link-title">Goiás Velho</span>
+                <span class="link-desc">O encerramento & Cora Coralina</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Edições & Amazon -->
+        <div class="mega-col">
+          <h4 class="mega-title">✦ Edições & Amazon</h4>
+          <div class="mega-amazon-box">
+            <p class="mega-amazon-text">Romance impresso e e-Book Kindle em 3 idiomas:</p>
+            <div class="mega-amazon-buttons">
+              <a href="#final" class="mega-btn mega-btn--primary">eBook Kindle Amazon</a>
+              <a href="#final" class="mega-btn mega-btn--secondary">Capa Comum Paperback</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna 4: Preview Dinâmico Visual -->
+        <div class="mega-col mega-col--preview">
+          <div class="mega-preview-card" id="mega-preview-card">
+            <img id="mega-preview-img" src="assets/C1-capa-frontal.jpg" alt="Preview Navegação" />
+            <div class="mega-preview-caption" id="mega-preview-caption">
+              <span>O Eclipse do Rio Araguaia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <main id="conteudo">
     <!-- HERO: quadro inteiro, sem crop, sem véu -->
