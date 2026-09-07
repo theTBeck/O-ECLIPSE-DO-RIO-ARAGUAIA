@@ -390,6 +390,9 @@ a {
   color: #d4af37;
   text-align: center;
 }
+
+.site-header {
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
