@@ -1476,6 +1476,10 @@ a {
   margin-bottom: 0;
 }
 
+.buy-btn--pulse {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
 .buy-btn--paperback {
   background: linear-gradient(135deg, var(--urucum) 0%, var(--urucum-hover) 100%);
   color: #fff8f2;
