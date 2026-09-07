@@ -179,7 +179,7 @@ window.initHero3DBook = function() {
   const planeMat = new THREE.ShadowMaterial({ opacity: 0.42 });
   const shadowPlane = new THREE.Mesh(planeGeo, planeMat);
   shadowPlane.rotation.x = -Math.PI / 2;
-  shadowPlane.position.y = -1.7;
+  shadowPlane.position.y = -2.05;
   shadowPlane.receiveShadow = true;
   scene.add(shadowPlane);
 
@@ -226,8 +226,8 @@ window.initHero3DBook = function() {
     new THREE.MeshStandardMaterial({ map: backTex, roughness: 0.28, metalness: 0.05 })   // Verso (Contracapa C4)
   ];
 
-  // Geometria Ampliada (2.1 x 3.1 x 0.4)
-  const bookGeo = new THREE.BoxGeometry(2.1, 3.1, 0.4);
+  // Geometria Ampliada em +20% (2.55 x 3.75 x 0.48)
+  const bookGeo = new THREE.BoxGeometry(2.55, 3.75, 0.48);
   const bookMesh = new THREE.Mesh(bookGeo, materials);
   bookMesh.castShadow = true;
   bookMesh.receiveShadow = true;
